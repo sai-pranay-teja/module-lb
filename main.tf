@@ -19,8 +19,6 @@ resource "aws_lb_listener" "lb-listener" {
   port              = "80"
   protocol          = "HTTP"
   default_action {
-    type             = "fixed-response"
-    default_action {
         type = "fixed-response"
 
         fixed_response {
@@ -28,7 +26,7 @@ resource "aws_lb_listener" "lb-listener" {
             message_body = "<h1>503 - Invalid Request</h1>"
             status_code  = "503"
     }
-  }
+  
   }
 }
 
